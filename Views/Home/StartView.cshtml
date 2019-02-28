@@ -1,0 +1,9 @@
+﻿@model VladPromoCodeWebApp.Models.StartModel
+@{
+    ViewData["Title"] = "StartView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>StartView</h2>
+<form method="post">
+    @Html.TextBoxFor(model=>model.Code) <input type="submit" value="Отправить" />
+</form>
