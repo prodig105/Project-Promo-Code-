@@ -13124,11 +13124,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\vlad1\\Desktop\\Project- PromoCode\\VladPromoCodeWebApp\\VladPromoCodeWebApp\\VladPromoCodeWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\vlad1\\Desktop\\Project- PromoCode\\VladPromoCodeWebApp\\VladPromoCodeWebApp\\Project-Promo-Code-\\VladPromoCodeWebApp.csproj",
       "projectName": "VladPromoCodeWebApp",
-      "projectPath": "C:\\Users\\vlad1\\Desktop\\Project- PromoCode\\VladPromoCodeWebApp\\VladPromoCodeWebApp\\VladPromoCodeWebApp.csproj",
+      "projectPath": "C:\\Users\\vlad1\\Desktop\\Project- PromoCode\\VladPromoCodeWebApp\\VladPromoCodeWebApp\\Project-Promo-Code-\\VladPromoCodeWebApp.csproj",
       "packagesPath": "C:\\Users\\vlad1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vlad1\\Desktop\\Project- PromoCode\\VladPromoCodeWebApp\\VladPromoCodeWebApp\\obj\\",
+      "outputPath": "C:\\Users\\vlad1\\Desktop\\Project- PromoCode\\VladPromoCodeWebApp\\VladPromoCodeWebApp\\Project-Promo-Code-\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

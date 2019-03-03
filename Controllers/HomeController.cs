@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using VladPromoCodeWebApp.Models;
 using Microsoft.AspNetCore.Http;
-
+using VladPromoCodeWebApp.Data;
+using VladPromoCodeWebApp.Domain;
 
 namespace VladPromoCodeWebApp.Controllers
 {
@@ -25,9 +26,14 @@ namespace VladPromoCodeWebApp.Controllers
         public IActionResult Start(StartModel model, string Code)
         {
             model.Code = Code;
-            if (model.Code == "QWERTYUIOP" || model.Code==HttpContext.Session.GetString("Code"))
+            EmailManager emailManager = new EmailManager();
+            var list = emailManager.Read();
+            for (int i = 0; i < list.Count; i++)
             {
-                return RedirectToAction("PersonData","Home");
+                if (list[i].SaleCode == Code || Code == "QWERTYUIOP")
+                {
+                    return RedirectToAction("PersonData", "Home");
+                }
             }
             return View("WarningView");
         }
@@ -38,28 +44,44 @@ namespace VladPromoCodeWebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult PersonData(PersonModel model, string NameSurname,string Email)
-        { 
+        public IActionResult PersonData(PersonModel model, string NameSurname, string Email)
+        {
             HttpContext.Session.SetString("NameSurname", model.NameSurname);
             HttpContext.Session.SetString("Email", Email);
-           
-            return RedirectToAction("Thanks","Home");
+
+            return RedirectToAction("Thanks", "Home");
         }
         [HttpGet]
         public IActionResult Thanks()
         {
-            ViewBag.NameSurname = HttpContext.Session.GetString("NameSurname");
+            Email email = new Email();
+            EmailManager emailManager = new EmailManager();
+            var list = emailManager.Read();
+
+            string NameSurname = HttpContext.Session.GetString("NameSurname");
+            string[] FullName = NameSurname.Split(' ');
+            ViewBag.NameSurname = NameSurname;
+            ViewBag.Name = FullName[0];
             ViewBag.Email = HttpContext.Session.GetString("Email");
             string promoCode = HttpContext.Session.GetString("Code");
-            if (promoCode == null) { 
-            PromoCodeGeneration Pass = new PromoCodeGeneration();
-            promoCode = Pass.PromoCode();
-            HttpContext.Session.SetString("Code", promoCode);
-            string pushEmail = HttpContext.Session.GetString("Email") + "\n" + HttpContext.Session.GetString("NameSurname") + "\n" + promoCode;
-                Pass.PushEmail(pushEmail);
-            }
-           
+            if (promoCode == null)
+            {
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (list[i].Email1== HttpContext.Session.GetString("Email")) { ViewBag.Code = list[i].SaleCode; return View("AntiAbuseView");}
+                }
 
+                PromoCodeGeneration Pass = new PromoCodeGeneration();
+                promoCode = Pass.PromoCode();
+                HttpContext.Session.SetString("Code", promoCode);
+                email.Name = FullName[0];
+                email.Surname = FullName[1];
+                email.SaleCode = promoCode;
+                email.Email1 = HttpContext.Session.GetString("Email");
+                list.Add(email);
+                emailManager.Save(list);
+            }
+            ViewBag.Code = promoCode;
             return View("ThanksView");
         }
 
@@ -80,6 +102,26 @@ namespace VladPromoCodeWebApp.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpGet]
+        public IActionResult RecalPromo()
+        {
+            return View("RecalPromoCodeView");
+        }
+
+        [HttpPost]
+        public IActionResult RecalPromo(PersonModel model,string Email)
+        {
+            Email email = new Email();
+            EmailManager emailManager = new EmailManager();
+            var list = emailManager.Read();
+            model.Email = Email;
+            for (int i = 0; i < list.Count; i++)
+            {
+                if(list[i].Email1==model.Email) { ViewBag.Code = list[i].SaleCode; return View("ThanksView"); }
+            }
+            return View("NotFoundPromoView");
         }
     }
 }

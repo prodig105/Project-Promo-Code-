@@ -1,0 +1,9 @@
+﻿@model VladPromoCodeWebApp.Models.PersonModel
+@{
+    ViewData["Title"] = "RecalPromoCodeView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Вспомнить промо-код.</h2>
+
+<form method="post">Ваш адрес электронной почты: @Html.TextBoxFor(model=>model.Email) <input type="submit" value="Отправить" /> </form>
