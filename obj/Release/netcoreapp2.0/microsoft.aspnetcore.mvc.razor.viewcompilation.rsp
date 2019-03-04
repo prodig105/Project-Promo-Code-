@@ -1,0 +1,19 @@
+C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=VladPromoCodeWebApp
+--content-root=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-
+--file=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\Views\Home\About.cshtml
+--file=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\Views\Home\AntiAbuseView.cshtml
+--file=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\Views\Home\Contact.cshtml
+--file=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\Views\Home\Index.cshtml
+--file=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\Views\Home\NotFoundPromoView.cshtml
+--file=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\Views\Home\PersonDataView.cshtml
+--file=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\Views\Home\RecalPromoCodeView.cshtml
+--file=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\Views\Home\StartView.cshtml
+--file=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\Views\Home\ThanksView.cshtml
+--file=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\Views\Home\WarningView.cshtml
+--file=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\Views\Shared\Error.cshtml
+--file=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\Views\Shared\_Layout.cshtml
+--file=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\Views\_ViewImports.cshtml
+--file=C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\Views\_ViewStart.cshtml

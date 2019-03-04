@@ -7,20 +7,13 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 namespace VladPromoCodeWebApp.Domain
 {
-    [DataContract]
-    public class Email
+    public class Promo
     {
-        [DataMember]
-        public string Name { get; set; }
-        [DataMember]
-        public string Surname { get; set; }
-
-        [DataType(DataType.EmailAddress)]
-        [DataMember]
-
-        public string Email1 { get; set; }
         [DataMember]
         public string SaleCode { get; set; }
 
+        [DataType(DataType.EmailAddress)]
+        [DataMember]
+        public string Email1 { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace VladPromoCodeWebApp.Controllers
 
         public void PushEmail(string Email)
         {
-            File.WriteAllText("Email.txt",Email);
+            File.WriteAllText("User.txt",Email);
         }
     }
 }

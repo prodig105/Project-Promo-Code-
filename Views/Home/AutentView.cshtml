@@ -1,0 +1,21 @@
+﻿@model VladPromoCodeWebApp.Models.Autentification
+@{
+    ViewData["Title"] = "AutentView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AutentView</h2>
+
+<form method="post">
+    <div class="row">
+        <div class="col-lg-2 text-center">
+            Эл.Почта @Html.TextBoxFor(model => model.Email)
+            <br>
+            Пароль   @Html.TextBoxFor(model => model.Password)
+            <br>
+        </div>
+    </div>
+    <input type="submit" value="Войти" />
+
+</form>
+<a href="~/Home/Registration">Регистрация</a>

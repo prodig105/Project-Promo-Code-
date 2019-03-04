@@ -1,0 +1,11 @@
+C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\bin\Release\netcoreapp2.0\VladPromoCodeWebApp.deps.json
+C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\bin\Release\netcoreapp2.0\VladPromoCodeWebApp.runtimeconfig.json
+C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\bin\Release\netcoreapp2.0\VladPromoCodeWebApp.runtimeconfig.dev.json
+C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\bin\Release\netcoreapp2.0\VladPromoCodeWebApp.dll
+C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\bin\Release\netcoreapp2.0\VladPromoCodeWebApp.pdb
+C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\obj\Release\netcoreapp2.0\VladPromoCodeWebApp.csprojResolveAssemblyReference.cache
+C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\obj\Release\netcoreapp2.0\VladPromoCodeWebApp.csproj.CoreCompileInputs.cache
+C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\obj\Release\netcoreapp2.0\VladPromoCodeWebApp.AssemblyInfoInputs.cache
+C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\obj\Release\netcoreapp2.0\VladPromoCodeWebApp.AssemblyInfo.cs
+C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\obj\Release\netcoreapp2.0\VladPromoCodeWebApp.dll
+C:\Users\vlad1\Desktop\Project- PromoCode\VladPromoCodeWebApp\VladPromoCodeWebApp\Project-Promo-Code-\obj\Release\netcoreapp2.0\VladPromoCodeWebApp.pdb
