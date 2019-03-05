@@ -13,7 +13,7 @@ namespace VladPromoCodeWebApp.Data
 {
     public class UserManager
     {
-        
+
         public List<User> Read()
         {
 
@@ -21,35 +21,29 @@ namespace VladPromoCodeWebApp.Data
             User email = new User();
 
             DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<User>));
-            using (FileStream file = new FileStream("UserData.txt", FileMode.OpenOrCreate))
+            using (StreamReader file = new StreamReader("UserData.json"))
             {
-               
-                list=((List<User>)jsonFormatter.ReadObject(file));
-            }
-            return list;
 
+                var content = file.ReadToEnd();
+                MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(content));
+                stream.Position = 0;
+                list = ((List<User>)jsonFormatter.ReadObject(stream));
+                return list;
+            }
 
         }
         public bool Save(List<User> list)
         {
             DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<User>));
-            using (FileStream fs = new FileStream("UserData.txt", FileMode.Truncate))
+            using (StreamWriter fs = new StreamWriter("UserData.json"))
             {
-                
-                jsonFormatter.WriteObject(fs, list);
+                var JSON = JsonConvert.SerializeObject(list);
+                fs.Write(JSON);
+
 
             }
             return true;
         }
-        public void SaveToJson(List<User> list)
-        {
-            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<User>));
-            using (FileStream fs = new FileStream("UserData.json", FileMode.Truncate))
-            {
 
-                jsonFormatter.WriteObject(fs, list);
-
-            }
-        }
     }
 }

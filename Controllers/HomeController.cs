@@ -76,13 +76,10 @@ namespace VladPromoCodeWebApp.Controllers
             string promoCode = HttpContext.Session.GetString("Code");
             if (promoCode == null)
             {
-                //for (int i = 0; i < PromoCode.Count; i++)
-                //{
-                //    if (PromoCode[i].Email1 == HttpContext.Session.GetString("User"))
-                //    {
-
-                //    }
-                //}
+                for (int i = 0; i < PromoCode.Count; i++)
+                {
+                    if (PromoCode[i].Email1 == HttpContext.Session.GetString("Email")) { ViewBag.Code = PromoCode[i].SaleCode; return View("AntiAbuseView"); }
+                }
 
                 PromoCodeGeneration Pass = new PromoCodeGeneration();
                 promoCode = Pass.PromoCode();
@@ -93,6 +90,7 @@ namespace VladPromoCodeWebApp.Controllers
                 //user.Email1 = HttpContext.Session.GetString("User");
                 promo.Email1 = HttpContext.Session.GetString("User");
                 //UserDATA.Add(user);
+                PromoCode.Add(promo);
                 emailManager.Save(PromoCode);
             }
             ViewBag.Code = promoCode;
@@ -177,6 +175,8 @@ namespace VladPromoCodeWebApp.Controllers
             var PromoCode = emailManager.Read();
             promo.Email1 = model.Email;
             ViewBag.Code = promo.SaleCode = Code;
+            HttpContext.Session.SetString("Code1", promo.SaleCode);
+            PromoCode.Add(promo);
             emailManager.Save(PromoCode);
             return View("UserCabinetView");
         }
@@ -223,5 +223,11 @@ namespace VladPromoCodeWebApp.Controllers
 
             return View("ErrorAutentView");
         }
+        public IActionResult Exit()
+        {
+            HttpContext.Session.SetInt32("ID", 0);
+            return RedirectToAction("Start", "Home");
+        }
+
     }
 }

@@ -13,42 +13,40 @@ namespace VladPromoCodeWebApp.Data
 {
     public class PromoManager
     {
-        public List<Promo> Read()
-        {
-
-            List<Promo> list = new List<Promo>();
-            Promo promo = new Promo();
-
-            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<Promo>));
-            using (FileStream file = new FileStream("PromoCodedata.txt", FileMode.OpenOrCreate))
+        
+            public List<Promo> Read()
             {
 
-                list = ((List<Promo>)jsonFormatter.ReadObject(file));
+                List<Promo> list = new List<Promo>();
+                Promo promo = new Promo();
+
+                DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<Promo>));
+          
+            using (StreamReader file = new StreamReader("PromoCodedata.json"))
+            {
+
+                var content = file.ReadToEnd();
+                MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(content));
+                stream.Position = 0;
+                list = ((List<Promo>)jsonFormatter.ReadObject(stream));
+                //list = (List<Promo>)JsonConvert.DeserializeObject(content);
             }
+
             return list;
-
-
-        }
-        public bool Save(List<Promo> list)
-        {
-            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<Promo>));
-            using (FileStream fs = new FileStream("PromoCodedata.txt", FileMode.Truncate))
+            }
+          
+            public bool Save(List<Promo> list)
             {
+                DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<Promo>));
+            using (StreamWriter fs = new StreamWriter("PromoCodedata.json"))
+                {
+                var JSON = JsonConvert.SerializeObject(list);
+                fs.Write(JSON);
 
-                jsonFormatter.WriteObject(fs, list);
 
             }
-            return true;
-        }
-        public void SaveToJson(List<Promo> list)
-        {
-            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<Promo>));
-            using (FileStream fs = new FileStream("UserData.json", FileMode.Truncate))
-            {
-
-                jsonFormatter.WriteObject(fs, list);
-
+                return true;
             }
+         
         }
     }
-}
