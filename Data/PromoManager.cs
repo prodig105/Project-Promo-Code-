@@ -14,7 +14,7 @@ namespace VladPromoCodeWebApp.Data
     public class PromoManager
     {
         
-            public List<Promo> Read()
+            public List<Promo> Read(int i)
             {
 
                 List<Promo> list = new List<Promo>();
@@ -35,7 +35,7 @@ namespace VladPromoCodeWebApp.Data
             return list;
             }
           
-            public bool Save(List<Promo> list)
+            public bool Save(List<Promo> list,int i)
             {
                 DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<Promo>));
             using (StreamWriter fs = new StreamWriter("PromoCodedata.json"))
@@ -48,5 +48,22 @@ namespace VladPromoCodeWebApp.Data
                 return true;
             }
          
+
+           public List<Promo> Read()
+        {
+
+            List<Promo> list = new List<Promo>();
+
+            string json = File.ReadAllText("PromoCodedata.json",Encoding.UTF8);
+            list = ((List < Promo > )JsonConvert.DeserializeObject(json));
+
+            return list;
         }
+
+        public void Save(List<Promo> list)
+        {
+            string output = JsonConvert.SerializeObject(list, Formatting.Indented);
+            File.WriteAllText("settings.json", output,Encoding.UTF8);
+        }
+    }
     }

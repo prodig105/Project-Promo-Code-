@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+
 namespace VladPromoCodeWebApp
 {
     public class Startup
@@ -21,6 +22,7 @@ namespace VladPromoCodeWebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddTransient<LoginViewComponent>();
             services.AddDistributedMemoryCache();
             services.AddSession(options => {
                 options.IdleTimeout = TimeSpan.FromMinutes(1);//You can set Time   

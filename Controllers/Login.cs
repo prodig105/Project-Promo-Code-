@@ -7,6 +7,6 @@ namespace VladPromoCodeWebApp.Controllers
 {
     public class Login
     {
-        htt
+      
     }
 }
